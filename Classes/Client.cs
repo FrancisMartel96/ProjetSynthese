@@ -67,22 +67,28 @@ namespace ProjetSynthese.Classes
             Regex regNumTel = new Regex("^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}$");
 
             if (!regNumClient.IsMatch(numClient))
-                throw new ArgumentException("Doit être composé de six chiffres", "numClient");
+                throw new ArgumentException
+                    ("Doit être composé de six chiffres", "numClient");
 
             if (!regPrenom.IsMatch(prenom))
-                throw new ArgumentException("Doit commencer par une majuscule suivie d'un à vingt caractères alphabétiques.", "prenom");
+                throw new ArgumentException
+                    ("Doit commencer par une majuscule suivie d'un à vingt caractères alphabétiques.", "prenom");
 
             if (!regNom.IsMatch(nom))
-                throw new ArgumentException("Doit commencer par une majuscule suivie d'un à vingt caractères alphabétiques.", "nom");
+                throw new ArgumentException
+                    ("Doit commencer par une majuscule suivie d'un à vingt caractères alphabétiques.", "nom");
 
             if (!regCourriel.IsMatch(courriel))
-                throw new ArgumentException("Veuillez saisir un adresse de courriel valide.", "courriel");
+                throw new ArgumentException
+                    ("Veuillez saisir un adresse de courriel valide.", "courriel");
 
             if (!regNumTel.IsMatch(numTel))
-                throw new ArgumentException("Veuillez saisir un numéro de téléphone valide.", "numTel");
+                throw new ArgumentException
+                    ("Veuillez saisir un numéro de téléphone valide.", "numTel");
 
             if (Age(dateNaiss) < 16)
-                throw new ArgumentException("Le client doit avoir au moins 16 ans.");
+                throw new ArgumentException
+                    ("Le client doit avoir au moins 16 ans.");
 
             this.numClient = numClient;
             this.prenom = prenom;
@@ -94,7 +100,7 @@ namespace ProjetSynthese.Classes
 
         /// <summary>
         /// Méthode qui calcule l'âge d'un client
-        /// Source: https://stackoverflow.com/questions/9/how-do-i-calculate-someones-age-based-on-a-datetime-type-birthday
+        /// Source: 
         /// </summary>
         /// <param name="dateNaiss"></param>
         /// <returns>Âge du client</returns>

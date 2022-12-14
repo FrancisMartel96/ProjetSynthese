@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace ProjetSynthese.Classes
 {
@@ -70,23 +66,31 @@ namespace ProjetSynthese.Classes
 
         // Constructeur avec paramètres et valeurs par défaut
         public Reservation(string numReserv = "", int nbInvite = 0,
-            DateTime dateVisite = default(DateTime), int prix = 0, string nomBreuvage = "",
-            int prixBreuvage = 0, Client hôte = null, Service serv = null)
+            DateTime dateVisite = default(DateTime), int prix = 0)
         {
             // Validation de données à l'aide du Regex
             Regex regNumReserv = new Regex("^[0-9]{6}$");
 
             if (!regNumReserv.IsMatch(numReserv))
-                throw new ArgumentException("Doit être composé de six chiffres.", "numReserv");
+                throw new ArgumentException
+                    ("Doit être composé de six chiffres.", "numReserv");
 
             if (dateVisite < DateTime.Today)
-                throw new ArgumentException("Veuillez entrer une date présente ou future.", "dateVisite");
+                throw new ArgumentException
+                    ("Veuillez entrer une date présente ou future.", "dateVisite");
 
             this.numReserv = numReserv;
             this.nbInvite = nbInvite;
             this.dateVisite = dateVisite;
             this.prix = prix;
-            client = hôte;
+        }
+
+        // Constructeur avec paramètres, mais sans valeurs par défaut
+        public Reservation(string nomBreuvage, int prixBreuvage, Client host, Service serv)
+        {
+            this.nomBreuvage = nomBreuvage;
+            this.prixBreuvage = prixBreuvage;
+            client = host;
             service = serv;
         }
     }
