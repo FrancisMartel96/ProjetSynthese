@@ -84,12 +84,12 @@ namespace ProjetSynthese.Classes
             if (Age(dateNaiss) < 16)
                 throw new ArgumentException("Le client doit avoir au moins 16 ans.");
 
-            this.NumClient = numClient;
-            this.Prenom = prenom;
-            this.Nom = nom;
-            this.DateNaiss = dateNaiss;
-            this.Courriel = courriel;
-            this.NumTel = numTel;
+            this.numClient = numClient;
+            this.prenom = prenom;
+            this.nom = nom;
+            this.dateNaiss = dateNaiss;
+            this.courriel = courriel;
+            this.numTel = numTel;
         }
 
         /// <summary>

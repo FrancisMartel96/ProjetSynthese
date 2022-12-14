@@ -47,10 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Client.cs" />
-    <Compile Include="Classes\Massage.cs" />
     <Compile Include="Classes\Reservation.cs" />
     <Compile Include="Classes\Service.cs" />
-    <Compile Include="Classes\SoinCorporel.cs" />
     <Compile Include="Classes\StatistiquesSpa.cs" />
     <Compile Include="Formulaires\FormAuthentification.cs">
       <SubType>Form</SubType>

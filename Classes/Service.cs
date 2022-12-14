@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjetSynthese.Classes
 {
-    internal class Service
+    public abstract class Service
     {
+
     }
 }
