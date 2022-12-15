@@ -56,8 +56,12 @@ namespace ProjetSynthese.Classes
         }
 
         // Constructeur avec paramètres et valeurs par défaut
-        public Client(string numClient = "", string prenom = "", string nom = "",
-            DateTime dateNaiss = default(DateTime), string courriel = "", string numTel = "")
+        public Client(string numClient = "",
+            string prenom = "",
+            string nom = "",
+            DateTime dateNaiss = default(DateTime),
+            string courriel = "",
+            string numTel = "")
         {
             // Validation de données à l'aide du Regex
             Regex regNumClient = new Regex("^[0-9]{6}$");

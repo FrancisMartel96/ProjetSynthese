@@ -65,8 +65,11 @@ namespace ProjetSynthese.Classes
         }
 
         // Constructeur avec paramètres et valeurs par défaut
-        public Reservation(string numReserv = "", int nbInvite = 0,
-            DateTime dateVisite = default(DateTime), int prix = 0)
+        public Reservation(
+            string numReserv = "",
+            int nbInvite = 0,
+            DateTime dateVisite = default(DateTime),
+            int prix = 0)
         {
             // Validation de données à l'aide du Regex
             Regex regNumReserv = new Regex("^[0-9]{6}$");
@@ -85,7 +88,7 @@ namespace ProjetSynthese.Classes
             this.prix = prix;
         }
 
-        // Constructeur avec paramètres, mais sans valeurs par défaut
+        // Constructeur avec paramètres sans valeurs par défaut
         public Reservation(string nomBreuvage, int prixBreuvage, Client host, Service serv)
         {
             this.nomBreuvage = nomBreuvage;

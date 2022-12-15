@@ -1,42 +1,45 @@
 ﻿namespace ProjetSynthese.Classes
 {
-    public abstract class Service
+    public class Service
     {
-        // Déclaration des attributs protégés
-        protected string numService;
-        protected string titreService;
-        protected int prix;
-        protected string duree;
+        // Déclaration des attributs privés
+        private string numService;
+        private string titreService;
+        private int prix;
+        private string duree;
 
         // Déclaration des propriétés
-        public abstract string NumService
+        public string NumService
         {
-            get;
-            set;
+            get { return numService; }
+            set { numService = value; }
         }
 
-        public abstract string TitreService
+        public string TitreService
         {
-            get;
-            set;
+            get { return titreService; }
+            set { titreService = value; }
         }
 
-        public abstract int Prix
+        public int Prix
         {
-            get;
-            set;
+            get { return prix; }
+            set { prix = value; }
         }
 
-        public abstract string Duree
+        public string Duree
         {
-            get;
-            set;
+            get { return duree; }
+            set { duree = value; }
         }
 
-        /// <summary>
-        /// Méthode qui affiche les détails d'une réservation.
-        /// Elle devra être surchargée.
-        /// </summary>
-        public abstract void Afficher();
+        // Constructeur avec paramètres sans valeurs par défaut
+        public Service(string numService, string titreService, int prix, string duree)
+        {
+            this.numService = numService;
+            this.titreService = titreService;
+            this.prix = prix;
+            this.duree = duree;
+        }
     }
 }
