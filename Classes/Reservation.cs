@@ -7,9 +7,9 @@ namespace ProjetSynthese.Classes
     {
         // Déclaration des attributs privés
         private string numReserv;
-        private int nbInvite;
+        private string nbInvite;
         private DateTime dateVisite;
-        private int prix;
+        private string prix;
         private string nomBreuvage;
         private int prixBreuvage;
         private Client client;
@@ -22,7 +22,7 @@ namespace ProjetSynthese.Classes
             set { numReserv = value; }
         }
 
-        public int NbInvite
+        public string NbInvite
         {
             get { return nbInvite; }
             set { nbInvite = value; }
@@ -34,7 +34,7 @@ namespace ProjetSynthese.Classes
             set { dateVisite = value; }
         }
 
-        public int Prix
+        public string Prix
         {
             get { return prix; }
             set { prix = value; }
@@ -67,9 +67,9 @@ namespace ProjetSynthese.Classes
         // Constructeur avec paramètres et valeurs par défaut
         public Reservation(
             string numReserv = "",
-            int nbInvite = 0,
+            string nbInvite = "",
             DateTime dateVisite = default(DateTime),
-            int prix = 0)
+            string prix = "")
         {
             // Validation de données à l'aide du Regex
             Regex regNumReserv = new Regex("^[0-9]{6}$");
@@ -77,7 +77,11 @@ namespace ProjetSynthese.Classes
             if (!regNumReserv.IsMatch(numReserv))
                 throw new ArgumentException
                     ("Doit être composé de six chiffres.", "numReserv");
-
+            
+            if (nbInvite == "")
+                throw new ArgumentException
+                        ("Veuillez choisir un nombre d'invité(s).", "nbInvite");
+            
             if (dateVisite < DateTime.Today)
                 throw new ArgumentException
                     ("Veuillez entrer une date présente ou future.", "dateVisite");

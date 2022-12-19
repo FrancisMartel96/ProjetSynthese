@@ -65,8 +65,8 @@ namespace ProjetSynthese.Classes
         {
             // Validation de données à l'aide du Regex
             Regex regNumClient = new Regex("^[0-9]{6}$");
-            Regex regPrenom = new Regex("^[A-Z]{1}[a-z]{1,20}&");
-            Regex regNom = new Regex("^[A-Z]{1}[a-z]{1,20}&");
+            Regex regPrenom = new Regex("^[A-Z]{1}[a-z]{1,20}$");
+            Regex regNom = new Regex("^[A-Z]{1}[a-z]{1,20}$");
             Regex regCourriel = new Regex("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$");
             Regex regNumTel = new Regex("^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}$");
 
@@ -82,17 +82,17 @@ namespace ProjetSynthese.Classes
                 throw new ArgumentException
                     ("Doit commencer par une majuscule suivie d'un à vingt caractères alphabétiques.", "nom");
 
+            if (Age(dateNaiss) < 16)
+                throw new ArgumentException
+                    ("Le client doit avoir au moins 16 ans.", "dateNaiss");
+
             if (!regCourriel.IsMatch(courriel))
                 throw new ArgumentException
-                    ("Veuillez saisir un adresse de courriel valide.", "courriel");
+                    ("Veuillez saisir une adresse de courriel valide.", "courriel");
 
             if (!regNumTel.IsMatch(numTel))
                 throw new ArgumentException
                     ("Veuillez saisir un numéro de téléphone valide.", "numTel");
-
-            if (Age(dateNaiss) < 16)
-                throw new ArgumentException
-                    ("Le client doit avoir au moins 16 ans.");
 
             this.numClient = numClient;
             this.prenom = prenom;

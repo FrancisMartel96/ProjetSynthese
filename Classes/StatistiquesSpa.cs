@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Configuration;
 
 namespace ProjetSynthese.Classes
 {
     public static class StatistiquesSpa
     {
-        // Déclaration de la liste de réservations
+        // Déclaration des listes
         private static List<Reservation> listReservations;
+        private static List<Client> listClients;
 
         // Déclaration des propriétés
         public static List<Reservation> ListReservations
@@ -14,10 +16,17 @@ namespace ProjetSynthese.Classes
             set { listReservations = value; }
         }
 
+        public static List<Client> ListClients
+        {
+            get { return listClients; }
+            set { listClients = value; }
+        }
+
         // Constructeur
         static StatistiquesSpa()
         {
             listReservations = new List<Reservation>();
+            listClients = new List<Client>();
         }
 
         /// <summary>
@@ -27,6 +36,15 @@ namespace ProjetSynthese.Classes
         public static int CompterReserv()
         {
             return listReservations.Count;
+        }
+
+        /// <summary>
+        /// Méthode qui retourne le nombre de clients dans la liste
+        /// </summary>
+        /// <returns>Nombre de clients</returns>
+        public static int CompterClient() 
+        { 
+            return listClients.Count;
         }
     }
 }
