@@ -34,5 +34,15 @@ namespace ProjetSynthese.Classes
 
             this.nomEsthe = nomEsthe;
         }
+
+        // Appel de la méthode abstraite
+        public override string AfficherInfo()
+        {
+            return ("Numéro: " + NumService + "\n" +
+                    "Titre: " + TitreService + "\n" +
+                    "Prix: " + Prix + "\n" +
+                    "Durée: " + Duree + "\n" +
+                    "Nom de l'esthéticienne: " + NomEsthe);
+        }
     }
 }

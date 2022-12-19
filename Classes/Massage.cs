@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ProjetSynthese.Classes
@@ -32,7 +33,7 @@ namespace ProjetSynthese.Classes
             int prix,
             string duree,
             string nomMasso,
-            string numLicence = ""
+            string numLicence
             ) : base(numService, titreService, prix, duree)
         {
             // Validation de données
@@ -40,8 +41,19 @@ namespace ProjetSynthese.Classes
                 throw new ArgumentException
                     ("Veuillez choisir votre massothérapeute désiré.", "nomMasso");
 
-            this.nomMasso= nomMasso;
-            this.numLicence= numLicence;
+            this.nomMasso = nomMasso;
+            this.numLicence = numLicence;
+        }
+
+        // Appel de la méthode abstraite
+        public override string AfficherInfo()
+        {
+            return ("Numéro: " + NumService + "\n" +
+                    "Titre: " + TitreService + "\n" +
+                    "Prix: " + Prix + "\n" +
+                    "Durée: " + Duree + "\n" +
+                    "Nom du massothérapeute: " + NomMasso + "\n" +
+                    "Numéro de licence: " + NumLicence);
         }
     }
 }

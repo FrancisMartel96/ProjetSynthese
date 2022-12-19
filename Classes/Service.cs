@@ -1,6 +1,8 @@
-﻿namespace ProjetSynthese.Classes
+﻿using System;
+
+namespace ProjetSynthese.Classes
 {
-    public class Service
+    public abstract class Service
     {
         // Déclaration des attributs privés
         private string numService;
@@ -41,5 +43,8 @@
             this.prix = prix;
             this.duree = duree;
         }
+
+        // Méthode abstraite
+        abstract public string AfficherInfo();
     }
 }
