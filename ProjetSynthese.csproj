@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,11 +53,47 @@
     <Compile Include="Classes\Service.cs" />
     <Compile Include="Classes\SoinCorporel.cs" />
     <Compile Include="Classes\StatistiquesSpa.cs" />
+    <Compile Include="Formulaires\FormAjoutClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\FormAjoutClient.Designer.cs">
+      <DependentUpon>FormAjoutClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\FormAjoutReserv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\FormAjoutReserv.Designer.cs">
+      <DependentUpon>FormAjoutReserv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\FormAnnulReserv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\FormAnnulReserv.Designer.cs">
+      <DependentUpon>FormAnnulReserv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulaires\FormAuthentification.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formulaires\FormAuthentification.Designer.cs">
       <DependentUpon>FormAuthentification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\FormListReservations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\FormListReservations.Designer.cs">
+      <DependentUpon>FormListReservations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\FormModifClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\FormModifClient.Designer.cs">
+      <DependentUpon>FormModifClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\FormModifReserv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\FormModifReserv.Designer.cs">
+      <DependentUpon>FormModifReserv.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulaires\FormReservation.cs">
       <SubType>Form</SubType>
@@ -64,8 +101,38 @@
     <Compile Include="Formulaires\FormReservation.Designer.cs">
       <DependentUpon>FormReservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulaires\FormSpaStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\FormSpaStats.Designer.cs">
+      <DependentUpon>FormSpaStats.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formulaires\FormAjoutClient.resx">
+      <DependentUpon>FormAjoutClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\FormAjoutReserv.resx">
+      <DependentUpon>FormAjoutReserv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\FormAnnulReserv.resx">
+      <DependentUpon>FormAnnulReserv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\FormListReservations.resx">
+      <DependentUpon>FormListReservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\FormModifClient.resx">
+      <DependentUpon>FormModifClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\FormModifReserv.resx">
+      <DependentUpon>FormModifReserv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\FormReservation.resx">
+      <DependentUpon>FormReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\FormSpaStats.resx">
+      <DependentUpon>FormSpaStats.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
